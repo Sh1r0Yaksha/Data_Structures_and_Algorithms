@@ -6,7 +6,7 @@ namespace DSA_Sem4
     {
         static void Main(string[] args)
         {
-            int[] testArray = {1,9,2,4,3,6,5,7,8};
+            int[] testArray = {1,2,9,4,5,6,3,7,8};
             int[] temp = testArray;
 
             Console.WriteLine("Bubble sort: ");
@@ -26,6 +26,10 @@ namespace DSA_Sem4
             MergeSort.Sort(testArray, 0, testArray.Length - 1);
             PrintArray(testArray);
 
+            testArray = temp;
+            Console.WriteLine("\n\nHeapSort: ");
+            HeapSort.Sort(testArray);
+            PrintArray(testArray);
 
         }
 
