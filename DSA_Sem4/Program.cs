@@ -31,6 +31,11 @@ namespace DSA_Sem4
             HeapSort.Sort(testArray);
             PrintArray(testArray);
 
+            testArray = temp;
+            Console.WriteLine("\n\nQuickSort: ");
+            QuickSort.Sort(testArray, 0, testArray.Length - 1);
+            PrintArray(testArray);
+
         }
 
         static void PrintArray(int[] array)
