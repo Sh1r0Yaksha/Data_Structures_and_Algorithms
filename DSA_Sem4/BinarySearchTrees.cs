@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace DSA_Sem4
 {
+
+   
     internal class BinarySearchTrees
     {      
         // Creating nodes as classes, can be made as structures in functional languages like C
@@ -117,16 +119,21 @@ namespace DSA_Sem4
 
         // Method to search for a key in the BST, it is like the binary search operation where we compare the value to
         // search with the key of root node and go left or rightacoording to value is s
-        public Node Search(Node root, int key)
+        public Node Search(int key)
+        {
+            return SearchRec(root, key);
+        }
+
+        Node SearchRec(Node root, int key)
         {
             if (root == null || root.key == key)
                 return root;
 
             else if (root.key < key)
-                return Search(root.right, key);
+                return SearchRec(root.right, key);
 
             else
-                return Search(root.left, key);
+                return SearchRec(root.left, key);
         }
     }
 

@@ -75,10 +75,51 @@ namespace DSA_Sem4
 
             // BST search
             Console.WriteLine("\n\nBST search for 11: ");
-            if (bst.Search(bst.root, 11) != null)
+            if (bst.Search(11) != null)
                 Console.WriteLine("It exists!");
             else
                 Console.WriteLine("It doesn't exist");
+
+            // Red-Black tree
+            RedBlackTrees rbt = new RedBlackTrees();
+            ReplaceArray(temp, testArray);
+
+
+            // Graph
+            Graph graph = new Graph(10);
+
+
+            graph.AddUndirectedEdge(1, 2);
+            graph.AddUndirectedEdge(2, 3);
+            graph.AddUndirectedEdge(3, 4);
+            graph.AddUndirectedEdge(1, 5);
+            graph.AddUndirectedEdge(5, 6);
+            graph.AddUndirectedEdge(6, 7);
+            graph.AddUndirectedEdge(5, 8);
+            graph.AddUndirectedEdge(1, 9);
+            graph.AddUndirectedEdge(9, 10);
+            graph.AddUndirectedEdge(2, 6);
+            graph.AddUndirectedEdge(9, 8);
+
+            //
+            //               1
+            //             / | \
+            //            2  5  9
+            //           /  / \  \
+            //          3  6   8  10
+            //         /  / 
+            //        4  7
+            //
+            // This is the graph
+
+
+            // DFS
+            Console.WriteLine("\n\nGraph traversal DFS: ");
+            DFS.DFSMethod(graph);
+
+            // BFS on first element
+            Console.WriteLine("\n\nGraph traversal BFS: ");
+            BFS.BFSMethod(graph, 1);
         }
 
         static void PrintArray(int[] array)
