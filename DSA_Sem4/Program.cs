@@ -139,6 +139,28 @@ namespace DSA_Sem4
             // Singly Linked list traverse
             Console.WriteLine("\n\nLinked list traversal: ");
             singlyLinkedList.TraverseSingly();
+
+            // Priority Queues
+            PriorityQueues priorityQueue = new PriorityQueues();
+            priorityQueue.Push(1, 6);
+            priorityQueue.Push(2, 3);
+            priorityQueue.Push(3, 5);
+            priorityQueue.Push(4, 8);
+            priorityQueue.Push(5, 4);
+
+            Console.WriteLine("\n\nPriority queues peek: ");
+            Console.WriteLine(priorityQueue.Peek());
+
+            PriorityQueues tempPriorityQueue = priorityQueue;
+
+
+            Console.WriteLine("\n\nPriority queue traversal: ");
+            while (tempPriorityQueue.head != null)
+            {
+                Console.Write(tempPriorityQueue.Pop().data + " -> ");
+            }
+
+
             
         }
 
