@@ -64,13 +64,14 @@ namespace DSA_Sem4
 
             for (int count = 0; count < vertices - 1; count++)
             {
+                // Index of vertex with minimum distance
                 int u = MinDist(dist, vertices, visited);
 
                 visited[u] = true;
 
                 for (int v = 0; v < vertices; v++)
                 {
-
+                    // Optimal substructure property
                     if (!visited[v] && graph[u, v] != 0 && dist[u] != int.MaxValue && dist[u] + graph[u, v] < dist[v])
                     {
                         dist[v] = dist[u] + graph[u, v];
