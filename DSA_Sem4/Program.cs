@@ -120,6 +120,26 @@ namespace DSA_Sem4
             // BFS on first element
             Console.WriteLine("\n\nGraph traversal BFS: ");
             BFS.BFSMethod(graph, 1);
+
+            // Singly Linked Lists
+            SinglyLinkedLists singlyLinkedList = new SinglyLinkedLists();
+
+            // Singly Linked list append
+            singlyLinkedList.SinglyAppend(1);
+            singlyLinkedList.SinglyAppend(2);
+            singlyLinkedList.SinglyAppend(3);
+            singlyLinkedList.SinglyAppend(4);
+
+            // Singly Linked list push
+            singlyLinkedList.SinglyPush(5);
+
+            // Singly Linked list insert after
+            singlyLinkedList.SinglyInsertAfter(singlyLinkedList.head.next.next, 6);
+
+            // Singly Linked list traverse
+            Console.WriteLine("\n\nLinked list traversal: ");
+            singlyLinkedList.TraverseSingly();
+            
         }
 
         static void PrintArray(int[] array)
