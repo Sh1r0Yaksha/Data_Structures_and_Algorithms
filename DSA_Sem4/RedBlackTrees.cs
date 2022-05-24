@@ -34,23 +34,42 @@ namespace DSA_Sem4
             public Node right;
             public bool colour;
 
-            public Node(int item, bool colour)
+            public Node parent;
+
+            public Node(int key)
             {
-                this.key = item;
-                this.colour = colour;
-                left = right = null;
+                this.key = key;
+                this.colour = true;
+                left = right = parent = null;
             }
         }
 
         public Node rootNode;
-        public Node parentNode;
-        public Node grandParentNode;
         
         public RedBlackTrees()
         {
             rootNode = null;
-            parentNode = null;
-            grandParentNode = null;
+        }
+
+        public void RotateLeft(Node x)
+        {
+            Node y = x.right;
+            if (y.left != null)
+                y.left.parent = x;
+            
+            y.parent = x.parent;
+
+            // check if x is root node
+            if (x.parent == null)
+                rootNode = y;
+
+            else if (x.parent.left == x)
+                x.parent.left = y;
+            else
+                x.parent.right = y;
+            
+            y.left = x;
+            x.parent = y;
         }
 
 
@@ -61,10 +80,12 @@ namespace DSA_Sem4
                 return root;
 
             else if (key < root.key)
-                return root.left;
+                return Search(root.left, key);
             else
-                return root.right;
+                return Search(root.right, key);
         }
+
+
 
 
     }
