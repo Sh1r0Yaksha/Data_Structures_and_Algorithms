@@ -40,7 +40,7 @@ namespace DSA_Sem4
         }
 
         // The method that inserts a key to the given root
-        Node InsertRec(Node root, int key)
+        protected virtual Node InsertRec(Node root, int key)
         {
 
             // If the node doesn't exists, creates a new node and inserts the key value on the node
@@ -71,7 +71,7 @@ namespace DSA_Sem4
         }
 
         // The method prints the keys in inorder way, i.e. first prints the left node, then root node and then right node
-        static void InorderRec(Node root)
+        void InorderRec(Node root)
         {
             // Checks if root exists, then recursively runs the inorder traversal steps
             if (root != null)
@@ -83,13 +83,13 @@ namespace DSA_Sem4
         }
 
         // Method to call the preorder traversal function
-        public void PreOrder()
+        public virtual void PreOrder()
         {
             PreOrderRec(root);
         }
 
         // The method prints the keys in preorder way, i.e. first prints the root node, then left node and then right node
-        void PreOrderRec(Node root)
+        public void PreOrderRec(Node root)
         {
             // Checks if root exists, then recursively runs the preorder traversal steps
             if (root != null)
@@ -124,7 +124,7 @@ namespace DSA_Sem4
             return SearchRec(root, key);
         }
 
-        Node SearchRec(Node root, int key)
+        protected virtual Node SearchRec(Node root, int key)
         {
             if (root == null || root.key == key)
                 return root;

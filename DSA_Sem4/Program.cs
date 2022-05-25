@@ -176,6 +176,44 @@ namespace DSA_Sem4
             Console.WriteLine("\n\nDijkstra's method: ");
 
             Dijkstra.DijkstraMethod(dijkstragraph, 0);
+
+
+            // Red Black Trees
+            RedBlackTrees tree = new RedBlackTrees();
+            
+            int[] rbArray = { 8, 18, 5, 15, 17, 25, 40, 80 };
+            
+            for (int i = 0; i < rbArray.Length; i++)
+            {
+                tree.Insert(rbArray[i]);
+            }
+
+            Console.WriteLine("\n\n\n\n");
+
+            tree.Delete(1);
+
+            tree.DisplayTree();
+
+            // AVL Trees
+
+            AVLTree avlTree = new AVLTree();
+
+            for (int i = 0; i < rbArray.Length; i++)
+                avlTree.Insert(rbArray[i]);
+
+
+            avlTree.PreOrder();
+
+            Console.WriteLine("\n\n");
+            Console.WriteLine(avlTree.Find(40).key);
+
+            Console.WriteLine("\n\n");
+            Console.WriteLine(avlTree.Predecessor(15).key);
+            Console.WriteLine(avlTree.Successor(17).key);
+
+            Console.WriteLine("\n\n\n\n");
+            avlTree.Inorder();
+
         }
 
         static void PrintArray(int[] array)
@@ -191,8 +229,9 @@ namespace DSA_Sem4
                 targetArray[i] = sourceArray[i];
             }
         }
+        
+        
 
-        // Red-Black Trees
-        RedBlackTrees rb = new RedBlackTrees();
+        
     }
 }
